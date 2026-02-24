@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homestead Iron | On-Site Equipment Maintenance | Central Ohio</title>
+  <meta name="description" content="Homestead Iron provides on-site equipment maintenance for compact tractors and off-road equipment across Central Ohio. No hauling. No dealer wait times." />
+  <style>
+    :root{
+      --green:#214E34;   /* Forest Green */
+      --charcoal:#1E1E1E;/* Charcoal */
+      --yellow:#F2B705;  /* Equipment Yellow */
+      --steel:#6F7477;   /* Steel Gray */
+      --bg:#ffffff;
+      --soft:#f5f6f7;
+      --max:1100px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--charcoal);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid #e8eaec;
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+    .mark{
+      width:40px; height:40px; border-radius:10px;
+      background:linear-gradient(135deg, var(--green), #163524);
+      position:relative;
+      box-shadow: 0 6px 18px rgba(0,0,0,.10);
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:11px 10px 12px 10px;
+      border:2px solid rgba(255,255,255,.85);
+      border-left:none; border-top:none;
+      transform:skewX(-8deg);
+      opacity:.85;
+    }
+    .brand strong{
+      display:block; font-size:1.05rem; letter-spacing:.4px;
+      color:var(--green);
+    }
+    .brand span{display:block; font-size:.86rem; color:var(--steel)}
+    .links{display:flex; gap:14px; align-items:center; flex-wrap:wrap}
+    .links a{
+      text-decoration:none; font-weight:600; font-size:.92rem;
+      padding:8px 10px; border-radius:10px;
+    }
+    .links a:hover{background:var(--soft)}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      border:1px solid #d8dde2;
+      background:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .btn.primary{
+      background:var(--green);
+      color:#fff;
+      border-color:var(--green);
+      box-shadow: 0 10px 24px rgba(33,78,52,.20);
+    }
+    .btn.primary:hover{filter:brightness(.95)}
+    .btn:hover{background:var(--soft)}
+    .hero{
+      background:
+        radial-gradient(1200px 420px at 15% 0%, rgba(242,183,5,.18), transparent 60%),
+        radial-gradient(900px 380px at 85% 15%, rgba(33,78,52,.18), transparent 55%);
+      border-bottom:1px solid #eef0f2;
+    }
+    .hero-grid{
+      padding:56px 0 42px 0;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:26px;
+      align-items:start;
+    }
+    h1{
+      margin:0 0 10px 0;
+      font-size: clamp(2rem, 3vw, 3rem);
+      letter-spacing:-.6px;
+    }
+    .sub{
+      font-size:1.08rem;
+      color:#2f2f2f;
+      max-width:60ch;
+      margin:0 0 18px 0;
+    }
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 22px}
+    .badge{
+      background:#fff;
+      border:1px solid #e6eaee;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:700;
+      font-size:.86rem;
+      color:#2c2c2c;
+    }
+    .badge b{color:var(--green)}
+    .card{
+      background:#fff;
+      border:1px solid #e6eaee;
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+    .card h3{margin:0 0 8px}
+    .card p{margin:0 0 14px; color:#3a3a3a}
+    .kv{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .kv .k{
+      padding:10px 12px;
+      border-radius:12px;
+      background:var(--soft);
+      border:1px solid #eceff2;
+      font-size:.92rem;
+    }
+    .k small{display:block; color:var(--steel); font-weight:700; text-transform:uppercase; letter-spacing:.7px}
+    .k strong{display:block; margin-top:2px}
+    section{padding:46px 0}
+    .grid3{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .tile{
+      border:1px solid #e6eaee;
+      border-radius:var(--radius);
+      padding:16px;
+      background:#fff;
+    }
+    .tile h4{margin:0 0 6px}
+    .tile p{margin:0; color:#3a3a3a}
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    ul{margin:10px 0 0 18px}
+    li{margin:7px 0}
+    .accent{
+      border-left:5px solid var(--yellow);
+      padding-left:12px;
+      color:#2e2e2e;
+    }
+    .faq details{
+      border:1px solid #e6eaee;
+      border-radius:14px;
+      padding:14px 14px;
+      background:#fff;
+      margin-bottom:10px;
+    }
+    .faq summary{
+      cursor:pointer;
+      font-weight:800;
+      color:#222;
+    }
+    .faq p{margin:10px 0 0; color:#3a3a3a}
+    footer{
+      background:#0f1a14;
+      color:#dfe7e2;
+      padding:26px 0;
+    }
+    footer a{color:#dfe7e2}
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    .mini{font-size:.9rem; color:#b9c5bf}
+    .hr{height:1px; background:rgba(255,255,255,.12); margin:18px 0}
+    .note{font-size:.86rem; color:#b9c5bf; max-width:85ch}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:9px 12px;
+      border-radius:999px;
+      background:rgba(242,183,5,.15);
+      color:#fff;
+      border:1px solid rgba(242,183,5,.35);
+      font-weight:800;
+    }
+    .pill span{color:#ffe9a8}
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns:1fr; padding-top:40px}
+      .grid3{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+      .kv{grid-template-columns:1fr}
+      .links{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Homestead Iron Home">
+      <div class="mark" aria-hidden="true"></div>
+      <div>
+        <strong>Homestead Iron</strong>
+        <span>On-Site Equipment Maintenance</span>
+      </div>
+    </a>
+
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#areas">Service Area</a>
+      <a href="#why">Why On-Site</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="cta">
+      <a class="btn" href="tel:+14194944498" aria-label="Call Homestead Iron">(419) 494-4498</a>
+      <a class="btn primary" href="#contact" aria-label="Request service">Request Service</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>On-site equipment maintenance for Central Ohio acreage & jobsite machines.</h1>
+        <p class="sub">
+          Keep your compact tractor and off-road equipment ready without hauling it to a dealer.
+          We come to you for maintenance, inspections, and service support.
+        </p>
+
+        <div class="badges" aria-label="Key benefits">
+          <div class="badge"><b>No hauling</b> required</div>
+          <div class="badge"><b>Less downtime</b></div>
+          <div class="badge"><b>Convenient</b> scheduling</div>
+          <div class="badge"><b>Central Ohio</b> service area</div>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="tel:+14194944498">Call/Text: (419) 494-4498</a>
+          <a class="btn" href="#services">See Services</a>
+        </div>
+
+        <p class="mini" style="margin-top:12px;">
+          Homestead Iron — <strong>On-Site Equipment Maintenance</strong>
+        </p>
+      </div>
+
+      <aside class="card" aria-label="Quick quote card">
+        <h3>Fast scheduling</h3>
+        <p>
+          Tell us what equipment you have and where it’s located. We’ll confirm scope and get you on the calendar.
+        </p>
+
+        <div class="kv" role="list">
+          <div class="k" role="listitem">
+            <small>Service Area</small>
+            <strong>~50 miles from Etna, OH</strong>
+          </div>
+          <div class="k" role="listitem">
+            <small>Best For</small>
+            <strong>Compact tractors & off-road equipment</strong>
+          </div>
+          <div class="k" role="listitem">
+            <small>Contact</small>
+            <strong>(419) 494-4498</strong>
+          </div>
+          <div class="k" role="listitem">
+            <small>Hours</small>
+            <strong>By appointment</strong>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="accent">
+          <strong>Tip:</strong> Have your make/model and approximate hours ready for a quick quote.
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 style="margin:0 0 10px;">Services</h2>
+      <p class="mini" style="margin-top:0; color:#5c6368;">
+        Focused on preventive maintenance and uptime for compact tractors, property equipment, and off-road jobsite machines.
+      </p>
+
+      <div class="grid3" style="margin-top:16px;">
+        <div class="tile">
+          <h4>Oil & Filter Service</h4>
+          <p>Engine oil and filters serviced on-site, including inspection and documentation.</p>
+        </div>
+        <div class="tile">
+          <h4>Hydraulic Service</h4>
+          <p>Hydraulic filters and fluid service with leak checks and basic system inspection.</p>
+        </div>
+        <div class="tile">
+          <h4>Preventive Maintenance</h4>
+          <p>Walkaround inspection, grease points, belts/hoses checks, and condition notes.</p>
+        </div>
+        <div class="tile">
+          <h4>Air & Fuel Filtration</h4>
+          <p>Dusty conditions clog filters fast—service and replacement as needed.</p>
+        </div>
+        <div class="tile">
+          <h4>Seasonal Readiness</h4>
+          <p>Pre-season maintenance so equipment is ready when work starts.</p>
+        </div>
+        <div class="tile">
+          <h4>Multi-Unit Scheduling</h4>
+          <p>Multiple machines at one location—efficient scheduling and reduced downtime.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;">
+        <h3 style="margin-top:0;">Equipment We Commonly Support</h3>
+        <div class="split">
+          <div>
+            <ul>
+              <li>Compact tractors (most brands)</li>
+              <li>Tractors with front loaders</li>
+              <li>Zero-turn mowers (property / acreage use)</li>
+              <li>Light towers and towable equipment</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>Mini excavators and small jobsite equipment</li>
+              <li>Skid steers (light service scope)</li>
+              <li>Attachments (basic inspection)</li>
+              <li>General off-road equipment maintenance</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mini" style="margin-top:10px;">
+          Note: If you’re unsure whether your machine is a fit, call/text and describe it—we’ll confirm.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas" style="background:var(--soft); border-top:1px solid #eef0f2; border-bottom:1px solid #eef0f2;">
+    <div class="wrap">
+      <h2 style="margin:0 0 10px;">Service Area</h2>
+      <p class="accent" style="margin:0;">
+        Serving Central Ohio within roughly <strong>50 miles of Etna</strong>, including Licking County and surrounding areas.
+      </p>
+      <div class="split" style="margin-top:14px;">
+        <div class="tile">
+          <h4>Typical Coverage</h4>
+          <p>Etna, Pataskala, Johnstown, Newark, Granville, Reynoldsburg, Pickerington, Delaware, and nearby rural areas.</p>
+        </div>
+        <div class="tile">
+          <h4>Outside the Radius?</h4>
+          <p>Contact us anyway—if the job is a good fit or multiple units are scheduled, we may be able to accommodate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <h2 style="margin:0 0 10px;">Why On-Site</h2>
+      <div class="grid3" style="margin-top:16px;">
+        <div class="tile">
+          <h4>Save time</h4>
+          <p>No trailer loading, no hauling, no waiting at the dealer.</p>
+        </div>
+        <div class="tile">
+          <h4>Reduce downtime</h4>
+          <p>Maintenance is scheduled around your work—keep equipment in rotation.</p>
+        </div>
+        <div class="tile">
+          <h4>Clear documentation</h4>
+          <p>Service notes that help you track hours, intervals, and repeat maintenance.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:18px;">
+        <h3 style="margin-top:0;">What to Expect</h3>
+        <ul>
+          <li>Confirm equipment make/model and basic scope</li>
+          <li>Arrive on-site with the necessary service supplies</li>
+          <li>Perform maintenance and inspection</li>
+          <li>Provide a brief summary of findings and next-interval recommendations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq" style="background:var(--soft); border-top:1px solid #eef0f2;">
+    <div class="wrap">
+      <h2 style="margin:0 0 10px;">FAQ</h2>
+
+      <details>
+        <summary>Do you service compact tractors without cabs and with front loaders?</summary>
+        <p>Yes—most compact tractors we see are open-station machines and many have front loaders.</p>
+      </details>
+
+      <details>
+        <summary>Do you work on small construction equipment like mini excavators?</summary>
+        <p>Yes. If it’s off-road jobsite equipment and within scope for maintenance/inspection, it’s often a good fit.</p>
+      </details>
+
+      <details>
+        <summary>What information should I have ready?</summary>
+        <p>Make/model, approximate hours, service location, and what you want done (oil change, hydraulic service, inspection, etc.).</p>
+      </details>
+
+      <details>
+        <summary>How do I schedule?</summary>
+        <p>Call or text <strong>(419) 494-4498</strong>. We’ll confirm details and propose appointment times.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 style="margin:0 0 10px;">Contact</h2>
+
+      <div class="split" style="margin-top:14px;">
+        <div class="card">
+          <h3 style="margin-top:0;">Call or Text</h3>
+          <p style="margin-bottom:12px;">Fastest way to schedule service.</p>
+          <p class="pill" aria-label="Phone number">
+            <span>📞</span> (419) 494-4498
+          </p>
+          <div class="hr" style="background:#eef0f2;"></div>
+          <p class="mini" style="color:#5c6368;">
+            Business name: <strong>Homestead Iron</strong><br />
+            Tagline: On-Site Equipment Maintenance
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0;">Quick Request (copy/paste)</h3>
+          <p class="mini" style="color:#5c6368; margin-top:0;">
+            Text this to us and we’ll reply with scheduling options:
+          </p>
+          <div style="background:var(--soft); border:1px solid #eceff2; border-radius:14px; padding:12px;">
+            <code style="white-space:pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;">
+Name:
+Town/Address:
+Equipment (make/model):
+Approx hours:
+Service needed (oil/hydraulic/inspection):
+Preferred day/time:
+            </code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div class="mark" style="width:34px; height:34px;"></div>
+          <div>
+            <strong style="color:#fff;">Homestead Iron</strong><br />
+            <span class="mini">On-Site Equipment Maintenance</span>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="note">
+          © <span id="year"></span> Homestead Iron. Central Ohio.
+          <br />
+          This site is a simple one-page template you can host anywhere (Squarespace, WordPress, GitHub Pages, etc.).
+        </div>
+      </div>
+
+      <div>
+        <strong>Contact</strong>
+        <div class="mini" style="margin-top:8px;">
+          Phone/Text: <a href="tel:+14194944498">(419) 494-4498</a><br />
+          Service Area: ~50 miles from Etna, OH
+        </div>
+      </div>
+
+      <div>
+        <strong>Quick Links</strong>
+        <div class="mini" style="margin-top:8px;">
+          <a href="#services">Services</a><br />
+          <a href="#areas">Service Area</a><br />
+          <a href="#faq">FAQ</a><br />
+          <a href="#contact">Request Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
