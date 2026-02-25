@@ -1,6 +1,9 @@
-http://www.homesteadironohio.com/* 
-https://homesteadironohio.com/:splat 301
+# Force HTTP -> HTTPS (apex + www)
 http://homesteadironohio.com/* 
 https://homesteadironohio.com/:splat 301
+http://www.homesteadironohio.com/* 
+https://homesteadironohio.com/:splat 301
+
+# Force www -> apex on HTTPS as well
 https://www.homesteadironohio.com/* 
 https://homesteadironohio.com/:splat 301
